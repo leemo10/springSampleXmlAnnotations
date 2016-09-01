@@ -5,8 +5,19 @@
 
     <bean name="customerRepository" class="com.pluralsight.repository.HibernateCustomerRepositoryImpl"/>
 
-      <bean name="customerService" class="com.pluralsight.service.CustomerServiceImpl">
-        <property name="customerRepository" ref="customerRepository"></property>
+      <!--autowire constructor example-->
+            <!--bean name="customerService" class="com.pluralsight.service.CustomerServiceImpl" autowire="constructor"-->
+
+    <!--autowire setter example-->
+            <bean name="customerService" class="com.pluralsight.service.CustomerServiceImpl" autowire="byType">
+
+          <!--setter injection-->
+                <!--<property name="customerRepository" ref="customerRepository"></property>-->
+
+          <!--constructor injection-->
+                <!--constructor-arg index="0" ref="customerRepository"/>-->
+
+
     </bean>
 
 </beans>
